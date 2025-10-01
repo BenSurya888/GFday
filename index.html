@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Girlfriend Day ❤️</title>
+  <meta name="theme-color" content="#fff0f6" />
+  <link rel="stylesheet" href="static/css/style.css"/>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">💖</div>
+      <div>
+        <h1>Happy Girlfriend Day!</h1>
+        <p class="lead">Untuk Cahya Nurizziyadah 💕</p>
+      </div>
+    </header>
+
+    <section class="hero">
+  <div class="hero-photo">
+    <img src="static/images/foto1.jpg" alt="Kita berdua"/>
+  </div>
+      <div class="content">
+        <span class="badge">5 Bulan Bersama</span>
+        <p class="message">
+         Happy Girlfriend Day, sayangku Cahya 🤍
+Udah 5 bulan kita bareng, banyak banget cerita yang udah kita lewati. Kadang ada ketawa, kadang juga ada ribut kecil yang bikin kita sama-sama belajar. Walaupun gitu, aku tetap bersyukur banget punya kamu di sisiku 🫶🏻. Aku sayang banget sama kamu, dan itu nggak pernah berubah meskipun kita sering beda pendapat ❤️.
+
+Aku cuma mau kamu inget, aku ada di sini buat kamu. Apapun yang lagi kamu jalanin, jangan pernah ngerasa sendirian. Aku siap dengerin kamu, nemenin kamu, dan dukung kamu. Kamu tinggal bilang tolong kalau butuh aku, aku pasti ada.
+
+Kalau aku pernah salah, aku minta maaf. Aku tau aku jauh dari sempurna, tapi aku selalu berusaha buat jadi yang terbaik buat kamu. Dan terima kasih karena kamu udah sabar, udah mau nerima aku apa adanya, dan udah kasih aku kesempatan buat sayang sama kamu selama ini 🫶🏻.
+
+Aku bener-bener bersyukur bisa jalan bareng kamu, Sayanggg. Semoga kita bisa terus kuat sama-sama, apa pun yang nanti kita hadapi
+        </p>
+        <div class="cta">
+          <a href="https://wa.me/6289515675014?text=CAHYA%20WIBU" 
+   class="btn btn-success" target="_blank">
+   Balas lewat WhatsApp
+</a>
+          <button id="playGameBtn" class="btn btn-primary">Main Game 💖</button>
+        </div>
+        <div class="love-box">Aku cinta kamu lebih dari kata-kata bisa jelaskan ❤️</div>
+      </div>
+    </section>
+
+<section class="gallery">
+  <!-- 2 foto landscape -->
+  <div class="photo-card landscape">
+    <img src="static/images/foto2.jpg" alt="Foto Landscape 1"/>
+  </div>
+  <div class="photo-card landscape">
+    <img src="static/images/foto3.jpg" alt="Foto Landscape 2"/>
+  </div>
+
+  <!-- 2 foto portrait -->
+  <div class="photo-card portrait">
+    <img src="static/images/foto4.jpg" alt="Foto Portrait 1"/>
+  </div>
+  <div class="photo-card portrait">
+    <img src="static/images/foto5.jpg" alt="Foto Portrait 2"/>
+  </div>
+</section>
+
+
+
+    <section class="game">
+      <h2>Game: Hindari Hati Patah 💔</h2>
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="320" height="480"></canvas>
+        <!-- on-screen touch controls (muncul di layar sentuh) -->
+        <div id="touchControls" class="touch-controls" aria-hidden="true">
+          <button id="leftBtn" class="touch-btn">◀</button>
+          <button id="rightBtn" class="touch-btn">▶</button>
+        </div>
+      </div>
+      <p id="scoreText">Skor: 0</p>
+    </section>
+  </div>
+
+  <!-- Modal Game Over -->
+  <div id="gameOverModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="card">
+      <h3>Game Over 💔</h3>
+      <p class="big-msg">Skormu: <span id="finalScore"></span></p>
+      <div class="modal-cta">
+        <button id="restartBtn" class="btn btn-primary">Main Lagi 🔄</button>
+        <button id="closeModalBtn" class="btn btn-success">Tutup ✖</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="static/music/bg.mp3" loop></audio>
+
+  <script src="static/js/script.js"></script>
+  <script src="static/js/game.js"></script>
+</body>
+</html>

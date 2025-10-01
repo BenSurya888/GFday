@@ -1,0 +1,223 @@
+:root {
+  --bg: #fff0f6;
+  --card: #ffffff;
+  --accent: #ff6b9a;
+  --accent-2: #ffb3c7;
+  --muted: #6b6b6b;
+  --glass: rgba(255,255,255,0.6);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #fff 0%, #fff8fb 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+}
+
+.page { width: 100%; max-width: 980px; }
+
+header {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+
+.logo {
+  width: 72px; height: 72px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700; color: #fff;
+  box-shadow: 0 10px 30px rgba(255, 107, 154, 0.18);
+}
+
+h1 { margin: 0; font-size: 26px; letter-spacing: -0.5px; }
+.lead { margin: 0; font-size: 14px; color: var(--muted); }
+
+/* Hero photo persegi */
+.hero-photo {
+  width: 140px;    /* lebih besar */
+  height: 140px;
+  border-radius: 16px; /* persegi dengan sudut sedikit membulat */
+  overflow: hidden;
+  margin: auto;
+  box-shadow: 0 10px 26px rgba(255, 107, 154, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* foto isi penuh, tanpa distorsi */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-photo:hover img {
+  transform: scale(1.06); /* efek hover kecil */
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+/* Card umum */
+.photo-card {
+  background: var(--card);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fdf6f9;
+}
+
+/* Landscape */
+.photo-card.landscape img {
+  max-height: 220px;
+}
+
+/* Portrait */
+.photo-card.portrait img {
+  max-height: 320px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+    gap: 16px;
+  }
+  .photo-card.landscape img,
+  .photo-card.portrait img {
+    max-height: none; /* biar ikuti ukuran aslinya */
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+.content { flex: 1; min-width: 240px; align-self: center; }
+.badge {
+  display: inline-block; padding: 6px 12px; border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,107,154,0.08), rgba(255,180,200,0.06));
+  font-weight: 700; color: var(--accent);
+  border: 1px solid rgba(255,107,154,0.12); margin-bottom: 12px;
+  font-size: 13px;
+}
+.message { margin-top: 8px; font-size: 17px; line-height: 1.5; color:#333; }
+
+.cta { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  padding: 10px 16px; border-radius: 12px; border: none; cursor: pointer;
+  font-weight: 700; font-size: 15px; transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-success { background: #28a745; color: #fff; }
+
+.love-box {
+  margin-top: 14px; padding: 12px; border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255, 107, 154, 0.04), rgba(255, 180, 200, 0.02));
+  font-size: 14px; color: var(--muted);
+  border: 1px solid rgba(255,107,154,0.05);
+}
+
+.gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px; margin-top: 16px;
+}
+.gallery img {
+  width: 100%; height: 110px; object-fit: cover; border-radius: 12px;
+  transition: transform 0.28s ease, box-shadow 0.28s;
+}
+.gallery img:hover {
+  transform: scale(1.04); box-shadow: 0 8px 26px rgba(255, 107, 154, 0.28);
+}
+
+.game { margin-top: 20px; text-align: center; }
+.canvas-wrap {
+  display: inline-block; position: relative; padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,240,246,0.6));
+  border-radius: 16px; border: 1px solid rgba(255,107,154,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+#gameCanvas {
+  background: linear-gradient(180deg, #fff0f6 0%, #fff 100%); border-radius: 12px;
+  display: block; margin: 8px auto; max-width: 100%; height: auto;
+  outline: none;
+}
+#scoreText { margin: 8px 0; font-weight: 800; color: var(--accent); }
+
+.hint { margin-top: 6px; color: var(--muted); font-size: 13px; }
+
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.36);
+  display: none; align-items: center; justify-content: center; z-index: 1200;
+}
+.modal.show { display: flex; }
+.card {
+  background: var(--card); padding: 20px; border-radius: 16px; text-align: center;
+  max-width: 360px; box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+}
+.big-msg { font-size: 22px; margin: 10px 0; color: #c0392b; }
+
+.modal-cta { display:flex; gap: 12px; justify-content:center; margin-top: 8px; }
+
+/* touch controls */
+.touch-controls {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 8px; display:flex; gap: 12px;
+  pointer-events: none; /* turned on per-button */
+}
+.touch-btn {
+  width: 72px; height: 56px; border-radius: 12px; border: none; font-size: 22px; font-weight: 800;
+  background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); color: #222;
+  pointer-events: auto; box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* subtle hearts falling */
+body::before {
+  content: "❤️  💖  💕  💘  💝";
+  position: fixed; top: -10%; left: 0; width: 100%;
+  font-size: 20px; text-align: center; animation: fall 14s linear infinite;
+  opacity: 0.12; pointer-events: none;
+}
+@keyframes fall {
+  0% { transform: translateY(-10%) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
+
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s ease forwards; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(255, 107, 154, 0.16); }
+
+@media (max-width: 700px) {
+  .hero { flex-direction: column; text-align: center; padding: 16px; }
+  .photo { width: 160px; height: 160px; }
+  .message { font-size: 15px; }
+  .touch-controls { display: flex; }
+}
+@media (min-width: 701px) {
+  /* hide touch controls on wide screens */
+  .touch-controls { display: none !important; }
+}
