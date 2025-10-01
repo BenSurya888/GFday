@@ -22,11 +22,17 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Auto play music: menunggu gesture / klik
-const bgMusic = document.getElementById("bgMusic");
-document.body.addEventListener("click", () => {
-  if (bgMusic && bgMusic.paused) {
-    bgMusic.volume = 0.90;
-    bgMusic.play().catch(()=>{/* some browsers block autoplay */});
+document.addEventListener("DOMContentLoaded", () => {
+  const bgMusic = document.getElementById("bgMusic");
+  if (bgMusic) {
+    bgMusic.volume = 0.35; // volume lebih pelan
+    // coba play otomatis
+    bgMusic.play().catch(() => {
+      // kalau gagal, tunggu interaksi user
+      document.body.addEventListener("click", () => {
+        bgMusic.play().catch(()=>{});
+      }, { once: true });
+    });
   }
-}, { once: true });
+});
+
